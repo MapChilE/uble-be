@@ -27,6 +27,9 @@ public class Benefit extends BaseEntity {
     @Column(nullable = false)
     private String content;
 
+    @Column(columnDefinition="TEXT", nullable = false)
+    private String manual;
+
     @Column(nullable = false)
     private Period period;
 
@@ -34,10 +37,11 @@ public class Benefit extends BaseEntity {
     private Integer number;
 
     @Builder(access = PRIVATE)
-    private Benefit(Brand brand, Rank rank, String content, Period period, Integer number) {
+    private Benefit(Brand brand, Rank rank, String content, String manual, Period period, Integer number) {
         this.brand = brand;
         this.rank = rank;
         this.content = content;
+        this.manual = manual;
         this.period = period;
         this.number = number;
     }

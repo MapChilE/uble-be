@@ -28,9 +28,6 @@ public class Brand extends BaseEntity {
     @Column(nullable = false)
     private String description;
 
-    @Column(columnDefinition="TEXT", nullable = false)
-    private String manual;
-
     @Column(name = "image_url", nullable = false)
     private String imageUrl;
 
@@ -53,13 +50,12 @@ public class Brand extends BaseEntity {
 
     @Builder(access = PRIVATE)
     private Brand(String name, String csrNumber, String benefit, String description,
-                  String manual, String imageUrl, Season season, Category category, Boolean isOnline,
+                  String imageUrl, Season season, Category category, Boolean isOnline,
                   Boolean isLocal, String reservationUrl) {
         this.name = name;
         this.csrNumber = csrNumber;
         this.benefit = benefit;
         this.description = description;
-        this.manual = manual;
         this.imageUrl = imageUrl;
         this.season = season;
         this.category = category;
